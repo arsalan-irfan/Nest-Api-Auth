@@ -16,25 +16,25 @@ export class UsersService {
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
   ) {
-    // this.users = [
-    //   {
-    //     userId: 1,
-    //     username: 'john',
-    //     password: 'changeme',
-    //   },
-    //   {
-    //     userId: 2,
-    //     username: 'chris',
-    //     password: 'secret',
-    //   },
-    //   {
-    //     userId: 3,
-    //     username: 'maria',
-    //     password: 'guess',
-    //   },
-    // ];
   }
-
+      // this.users = [
+      //   {
+      //     userId: 1,
+      //     username: 'john',
+      //     password: 'changeme',
+      //   },
+      //   {
+      //     userId: 2,
+      //     username: 'chris',
+      //     password: 'secret',
+      //   },
+      //   {
+      //     userId: 3,
+      //     username: 'maria',
+      //     password: 'guess',
+      //   },
+      // ];
+  
 
   async findAll(): Promise<User[]> {
     return await this.userRepository.find()
