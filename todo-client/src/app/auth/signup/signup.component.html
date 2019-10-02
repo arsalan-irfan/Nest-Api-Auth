@@ -1,1 +1,66 @@
-<p>signup works!</p>
+<div class="login">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-3"></div>
+          <div class="col-6 text-center">
+            <h3><b>Signup</b></h3>  
+              <div class="loginBox text-left">
+              <form>
+                  <div class="form-group">
+                      <label for="name" ><b>Name:</b></label>
+                      <input 
+                      type="text" 
+                      class="form-control" 
+                      id="name" 
+                      name="name" required
+                      [formControl]="name"
+                      />
+                  </div>
+                  <div class="form-group">
+                    <label for="email"><b>Email:</b></label>
+                    <input 
+                    type="email" 
+                    class="form-control" 
+                    id="email" 
+                    name="email" 
+                    required
+                    [formControl]="email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd"><b>Password:</b></label>
+                    <input 
+                    type="password" 
+                    class="form-control" 
+                    id="pwd" 
+                    name="pwd" 
+                    required
+                    [formControl]="pwd"
+                    />
+                
+                  </div>
+                  <div class="form-group">
+                      <label for="cpwd"><b>Confirm Password:</b></label>
+                      <input 
+                      type="password"
+                      class="form-control" 
+                      id="cpwd" 
+                      name="cpwd" 
+                      required
+                      [formControl]="cpwd"
+                    />
+                  </div>
+                  <div class="alert alert-danger" role="alert" *ngIf="error">
+                    {{error.msg}}
+                  </div>
+                  <div class="buttons text-center">
+                      <button type="button" class="btn btn-primary mr-2" (click)="onFormSubmit()">Signup</button>
+                      <button type="button" class="btn btn-secondary" routerLink='/'>Back</button>
+                  </div>
+                </form>   
+              </div>
+          </div>
+          <div class="col-3"></div>
+      </div>
+  </div>
+</div>

@@ -1,1 +1,28 @@
-<p>signin works!</p>
+<div class="login">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6 text-center">
+                  <h3><b>Signin</b></h3>  
+                    <div class="loginBox text-left">
+                    <form>
+                        <div class="form-group">
+                          <label for="email"><b>Email:</b></label>
+                          <input type="text" class="form-control" id="email" name="email" required [formControl]="email">
+                        </div>
+                        <div class="form-group">
+                          <label for="pwd"><b>Password:</b></label>
+                          <input type="password" class="form-control" id="pwd" name="pwd" required [formControl]="pwd">
+                        </div>
+                        
+                        <div class="buttons text-center">
+                            <button type="button" class="btn btn-primary mr-2" (click)="onFormSubmit()">Signin</button>
+                            <button type="button" class="btn btn-secondary" routerLink='/signup'>Signup</button>
+                        </div>
+                      </form>   
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,16 @@
+.loginBox{
+    background-color:white; 
+    border:black solid;
+    padding:20px;
+    border-radius: 100;
+}
+
+.form-group{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;   
+}
+.buttons{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

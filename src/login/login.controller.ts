@@ -18,21 +18,28 @@ export class LoginController {
   }
   //@UseGuards(AuthGuard('local'))  
   @Post('login')
-  async login(@Request() req, @Body() body) {
+  async login(@Body() body) {
     console.log("Body" + body.email);
     let user= await this.authService.validateUser(body.email,body.password)    
     if(user !== null)
       return this.authService.login(user);
     else
-      return {error:"User Not found"}
+      return {statusCode:"401",error:"Unauthorized"}
+  }
+  @Post('signup')
+  async signup(@Body() body) {
+    let newUser= await this.userService.create(body)
+    console.log(newUser);
+    let user= await this.authService.validateUser(body.email,body.password)    
+    if(user !== null)
+      return this.authService.login(user);
+    else
+      return {statusCode:"401",error:"Unauthorized"}
   }
   @UseGuards(AuthGuard('jwt'))
   @Get('me')
   getProfile(@Request() req) {
     return req.user;
   }
-  @Get('user/:email')
-  getUser(@Param('email') email) {
-    return this.userService.findOneUser(email);
-  }
+
 }
