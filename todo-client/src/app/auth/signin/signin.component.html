@@ -14,7 +14,9 @@
                           <label for="pwd"><b>Password:</b></label>
                           <input type="password" class="form-control" id="pwd" name="pwd" required [formControl]="pwd">
                         </div>
-                        
+                        <div class="alert alert-danger" role="alert" *ngIf="error">
+                          {{error.msg}}
+                        </div>
                         <div class="buttons text-center">
                             <button type="button" class="btn btn-primary mr-2" (click)="onFormSubmit()">Signin</button>
                             <button type="button" class="btn btn-secondary" routerLink='/signup'>Signup</button>
